@@ -1,0 +1,16 @@
+:root {
+    --primary-color: white;
+    --secondary-color: #003082;
+    --tertiary-color: #F0F1F3;
+    --accent-color: #FFC919;
+    --font-family: "NS sans", "Sans-serif"; 
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+h1 {
+    color: var(--secondary-color);
+    font-weight:600;
+}
