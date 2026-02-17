@@ -9,13 +9,17 @@
 </head>
 <body>
 <header>
-    <!-- <img class="NS-logo" src="Logo-NS.svg" href="/assets/Logo-NS.svg"> -->
+    <svg class="header_logo" xmlns="http://www.w3.org/2000/svg" width="77" height="30" viewBox="0 0 51 20"><path fill="#003082" d="M22.358,9.6A5.543,5.543,0,0,0,18.448,8H7.62l4.01-4H21.757a1.612,1.612,0,0,1,1.1.5l5.915,5.9a5.543,5.543,0,0,0,3.91,1.6H43.513L39.5,16H29.376a1.612,1.612,0,0,1-1.1-.5Zm3.108,8.7a6.1,6.1,0,0,0,3.91,1.7h11.73L51.133,10,41.107,0H35.492l8.021,8H32.685a2.11,2.11,0,0,1-1.1-.4L25.667,1.7A6.1,6.1,0,0,0,21.757,0H10.026L0,10,10.026,20h5.615L7.62,12H18.448a2.109,2.109,0,0,1,1.1.4Z"/></svg>
 </header>
-    <h1>Gegevens van de overledene</h1>
-        <form>
-
+    <div class="wrapper">
+            <h2>Dit is een schoolopdracht</h2>
+            
+        <form class="form_overlijden" id="form_overlijden">
+            <fieldset class="fieldset_header">
+                <h1>Aangifte erfbelasting</h1>
+            </fieldset>
             <fieldset>
-                <legend>Vul hier de gegevens in van de overledene.</legend>
+                <legend><i>Vul hier de gegevens in van de overledene.</i></legend>
             
             <fieldset>
                 <legend>Naam overledene</legend>
@@ -28,8 +32,8 @@
             </fieldset>
 
             <fieldset>
-                <legend>Bsn overledene</legend>
-                <label for="bsn">Bsn</label>
+                <legend>Bugerservicenummer overledene</legend>
+                <label for="bsn">BSN</label>
                     <input type="number" name="bsn" id="bsn" />
                 <label for="overlijdensdatum">Datum</label>
                     <input type="date" name="overlijdensdatum" id="overlijdensdatum" />
@@ -40,30 +44,26 @@
             <fieldset>
                 <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
  
-                    <input type="radio" id="partner_nee" name="partner_bij_overlijden" value="nee">
-                <label for="partner_nee">Nee</label>
-                    <input type="radio" id="partner_ja" name="partner_bij_overlijden" value="ja">
-                <label for="partner_ja">Ja</label>
+                    
+                <label class="button">Nee<input type="radio" id="nee" name="partner_bij_overlijden" value="nee"></label>
+                <label class="button"> Ja <input type="radio" id="ja" name="partner_bij_overlijden" value="ja"></label>
 
             </fieldset>
         
             <fieldset>
                 <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
 
-                    <input type="radio" id="nee" name="heeft_notariele-akte" value="nee">
-                <label for="nee">Nee</label>
-                    <input type="radio" id="ja" name="heeft_notariele-akte" value="ja">
-                <label for="ja">Ja</label>   
+                <label class="button">Nee<input type="radio" id="nee" name="heeft_notariele-akte" value="nee"></label>
+                <label class="button">Ja<input type="radio" id="ja" name="heeft_notariele-akte" value="ja"></label>   
             
             </fieldset>
 
             <fieldset>
                 <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
 
-                    <input type="radio" id="nee" name="heeft_finaal_verrekenbeding" value="nee">
-                <label for="nee">Nee</label>
-                    <input type="radio" id="ja" name="heeft_finaal_verrekenbeding" value="ja">
-                <label for="ja">Ja</label>
+                    
+                <label class="button">Nee<input type="radio" id="nee" name="heeft_finaal_verrekenbeding" value="nee"></label>
+                <label class="button">Ja<input type="radio" id="ja" name="heeft_finaal_verrekenbeding" value="ja"></label>
 
             </fieldset>
 
@@ -78,40 +78,34 @@
             <fieldset>
                 <legend>Had de overledene kinderen?</legend>
 
-                    <input type="radio" id="nee" name="kinderen" value="nee">
-                <label for="nee">Nee</label>
-                    <input type="radio" id="ja" name="kinderen" value="ja">
-                <label for="ja">Ja</label>
+                <label class="button">Nee<input type="radio" id="nee" name="kinderen" value="nee"></label>
+                <label class="button">Ja<input type="radio" id="ja" name="kinderen" value="ja"></label>
             
             </fieldset>
 
             <fieldset>
                 <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
 
-                    <input type="radio" id="nee" name="kinderen_eerder_overleden" value="nee">
-                <label for="nee">Nee</label>
-                    <input type="radio" id="ja" name="kinderen_eerder_overleden" value="ja">
-                <label for="ja">Ja</label>
+                    
+                <label class="button">Nee <input type="radio" id="nee" name="kinderen_eerder_overleden" value="nee"></label>
+                <label class="button">Ja <input type="radio" id="ja" name="kinderen_eerder_overleden" value="ja"></label>
 
             </fieldset>
 
             <fieldset>
                 <legend>Had dit overleden kind zelf kinderen?</legend>
 
-                    <input type="radio" id="nee" name="overleden_kind_kinderen" value="nee">
-                <label for="nee">Nee</label>
-                    <input type="radio" id="ja" name="overleden_kind_kinderen" value="ja">
-                <label for="ja">Ja</label>
+                <label class="button">Nee<input type="radio" id="nee" name="overleden_kind_kinderen" value="nee"></label>
+                <label class="button">Ja<input type="radio" id="ja" name="overleden_kind_kinderen" value="ja"></label>
             
             </fieldset>
         
             <fieldset>
                 <legend>Had de overledene een testament?</legend>
 
-                    <input type="radio" id="nee" name="had_testament" value="nee">
-                <label for="nee">Nee</label>
-                    <input type="radio" id="ja" name="had_testament" value="ja">
-                <label for="ja">Ja</label>
+                    
+                <label class="button">Nee<input type="radio" id="nee" name="had_testament" value="nee"></label>
+                <label class="button">Ja<input type="radio" id="ja" name="had_testament" value="ja"></label>
 
             </fieldset>
 
@@ -144,10 +138,14 @@
                 <legend>Datum van het testament of van de laatste wijziging</legend>
                 <label for="datum_testament">Datum</label>
                     <input type="date" name="datum_testament">
-            </fieldset>
 
             </fieldset>
+            <fieldset>
+                <button class="button" type="submit" form="form_overlijden">Verzend</button>
+            </fieldset>
+            
         </form>
+        </div>
 </body>
 </html>
 
@@ -156,4 +154,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fieldset
 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#attributes
 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form 
 https://www.w3schools.com/css/css_form.asp
+https://www.w3schools.com/cssref/pr_class_visibility.php
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Including_vector_graphics_in_HTML
+Label checked maken is persoonlijke communicatie met Jelle
 -->

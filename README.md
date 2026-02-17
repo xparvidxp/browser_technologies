@@ -16,3 +16,5 @@ benadrukt. Iconen worden niet toegevoegd omdat het mooi is, maar omdat het een f
 Als alle functies iconen hebben, werkt het niet, of zelfs averechts.
 
 # Dag 2 - Dinsdag 17 Februari
+
+Ik heb vandaag volledig gefocust op het stylen van de NS x Belastingdienst pagina. Tijdens sprint-0 kwam ik erachter dat het beter is om eerst voor een klein scherm te ontwerpen, en daarna naar een groot scherm toe werken. Dit is wat ik gedaan heb. Het stylen heeft de hele dag gekost, maar ik ben tevreden met het resultaat. Iets meer tijd, en het is niet te onderscheiden van echte NS ;). Jelle heeft mij geholpen bij het stylen van de radio buttons. Morgen starten we met les in CSS, dus wat we gaan doen is mij nog niet bekend.
