@@ -5,7 +5,7 @@ Wat ga ik morgen doen? -->
 
 # Dag 1 - Maandag 16 Februari
 
-Ik heb vandaag de eerste vragenlijst van aangifte erfbelasting nagemaakt. Ik heb geleerd hoe ik goed een <form> kan structureren in HTML door gebruik te maken van <fieldset> <legend> en <label>. Dit heeft mij 3 uur gekost naast de workshop. Morgen ga ik door met het stylen van de form. Als ik tijd over heb ga ik door met JS.
+Ik heb vandaag de eerste vragenlijst van aangifte erfbelasting nagemaakt. Ik heb geleerd hoe ik goed een <form> kan structureren in HTML door gebruik te maken van <fieldset <legend en <label. Dit heeft mij 3 uur gekost naast de workshop. Morgen ga ik door met het stylen van de form. Als ik tijd over heb ga ik door met JS.
 
 * Weekly Geek 1
 
