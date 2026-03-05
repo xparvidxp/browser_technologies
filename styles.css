@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --primary-color: white;  /* NS huisstijl kleuren */
     --secondary-color: #003082;
@@ -19,9 +24,17 @@ header {
 }
 
 .header_logo {
+    fill: var(--secondary-color);
     padding: 2vw;
     margin-left: 2vw;
     margin: 0px;
+    transition-duration: .8s;
+}
+
+.header_logo:hover {
+    fill: var(--accent-color);
+    transition-duration: .8s;
+    cursor: pointer;
 }
 
 h1 {
@@ -47,6 +60,13 @@ h2 {
 
 form {
     max-width: 50ch;
+}
+
+form:has(input[name="partner_bij_overlijden"][value="nee"]:checked) 
+.partner_followup {
+    display: none;
+    transition-duration: 1s;
+
 }
 
 fieldset {
@@ -80,7 +100,7 @@ label {
 }
 
 label:has(input[type="radio"]:checked) {
-    border: 3px solid;
+    border: 1px solid;
     border-color: var(--accent-color);
     font-weight: 400;
 }
@@ -101,16 +121,64 @@ input[type="radio"] {
     visibility: hidden;
 }
 
-button {
+.submit {
     color: var(--primary-color);
     background-color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.extra_rekeningen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+
+    margin-bottom: 2vw;
+}
+
+.extra_rekening {
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    font-weight: 500;
+    border: 1px solid grey;
+    color:var(--secondary-color);
+    background-color: transparent;
+    border-radius: 50%;
+    transition-duration: .4s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.extra_rekening:hover {
+    color: var(--accent-color);
+    background-color: var(--tertiary-color);
+    cursor: pointer;
 }
 
 .button {
+    display: flex;
+    flex-direction: row;
     width:100%;
-    max-width: 75vw;
+    min-width: 120px;
+    max-width: 150px;
     padding: 14px 16px;
     font-size: 18px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--tertiary-color);
+    transition-duration: .4s;
+}
+
+.button:hover {
+    background-color: var(--tertiary-color);
+    cursor: pointer;
+}
+
+.button_wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
