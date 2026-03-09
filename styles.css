@@ -62,11 +62,39 @@ form {
     max-width: 50ch;
 }
 
-form:has(input[name="partner_bij_overlijden"][value="nee"]:checked) 
-.partner_followup {
+form:has(input[name="partner_bij_overlijden"][value="nee"]:checked) /* Vragen weghalen zodra ze niet meer relevant zijn */
+.partner_followup-1 {
     display: none;
-    transition-duration: 1s;
+}
 
+form:has(input[name="partner_bij_overlijden"][value="nee"]:checked) 
+.partner_followup-2 {
+    display: none;
+}
+
+form:has(input[name="heeft_notariele-akte"][value="nee"]:checked) 
+.partner_followup-2 {
+    display: none;
+}
+
+form:has(input[name="kinderen"][value="nee"]:checked) 
+.kinderen_followup-1 {
+    display: none;
+}
+
+form:has(input[name="kinderen"][value="nee"]:checked) 
+.kinderen_followup-2 {
+    display: none;
+}
+
+form:has(input[name="kinderen_eerder_overleden"][value="nee"]:checked) 
+.kinderen_followup-2 {
+    display: none;
+}
+
+form:has(input[name="had_testament"][value="nee"]:checked) 
+.testament_followup {
+    display: none;
 }
 
 fieldset {
@@ -99,6 +127,13 @@ label {
     margin: 1vw;
 }
 
+.field_small {
+    width: 100%;
+    max-width: 12vw;
+    margin: 1vw;
+    align-self: flex-start;
+}
+
 label:has(input[type="radio"]:checked) {
     border: 1px solid;
     border-color: var(--accent-color);
@@ -115,6 +150,11 @@ input {
     font-size: 18px;
     border-radius: 6px;
     border: 1px solid #ccc;
+}
+
+:user-invalid {
+    background-color: red;
+    opacity: 0.3;
 }
 
 input[type="radio"] {
@@ -181,4 +221,26 @@ input[type="radio"] {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    width:100%;
+}
+
+.rekeningen_controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width:100%;
+}
+
+#rekening_2,
+#rekening_3 {
+    display: none;
+}
+
+.nojs .rekeningen_controls {
+    display:none;
+}
+
+.nojs #rekening_2,
+.nojs #rekening_3 {
+    display: flex;
 }

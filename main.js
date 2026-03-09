@@ -1,43 +1,54 @@
-    let rekeningNummer = 1;
+document.body.classList.remove("nojs"); // verwijder nojs class als js werkt
 
-    const plusButton = document.querySelector(".plus_button");
-    const minButton = document.querySelector(".min_button");
-    const container = document.querySelector(".extra_rekeningen");
-    
+let rekeningNummer = 1; // + - knop voor het toevoegen en verwijderen van rekeningen
 
-    function addRekening() {
-    rekeningNummer++;
+const plusButton = document.querySelector(".plus_button");
+const minButton = document.querySelector(".min_button");
+const container = document.querySelector(".extra_rekeningen");
 
-    const radioNaam = `rekening_${rekeningNummer}_soort`;
-    const idGez = `rekening_${rekeningNummer}_gezamenlijk`;
-    const idPrive = `rekening_${rekeningNummer}_prive`;
 
-    const html = `
-        <fieldset>
-        <legend>Rekening ${rekeningNummer}</legend>
+function addRekening() {
+rekeningNummer++;
 
-        <div class="button_wrapper">
-            <label class="button" for="${idGez}">
-            Gezamenlijk
-            <input type="radio" id="${idGez}" name="${radioNaam}" value="gezamenlijk">
-            </label>
+const radioNaam = `rekening_${rekeningNummer}_soort`;
+const idGez = `rekening_${rekeningNummer}_gezamenlijk`;
+const idPrive = `rekening_${rekeningNummer}_prive`;
 
-            <label class="button" for="${idPrive}">
-            Privé
-            <input type="radio" id="${idPrive}" name="${radioNaam}" value="prive">
-            </label>
-        </div>
+const html = `
+    <fieldset>
+    <legend>Rekening ${rekeningNummer}</legend>
 
-        <label for="rekening_${rekeningNummer}">Rekeningnummer (IBAN).</label>
-        <input type="text" id="rekening_${rekeningNummer}" name="rekening_${rekeningNummer}">
+    <div class="button_wrapper">
+        <label class="button" for="${idGez}">
+        Gezamenlijk
+        <input type="radio" id="${idGez}" name="${radioNaam}" value="gezamenlijk">
+        </label>
 
-        <label for="saldo_rekening_${rekeningNummer}">Saldo</label>
-        <input type="number" id="saldo_rekening_${rekeningNummer}" name="saldo_rekening_${rekeningNummer}">
-        </fieldset>
-    `;
+        <label class="button" for="${idPrive}">
+        Privé
+        <input type="radio" id="${idPrive}" name="${radioNaam}" value="prive">
+        </label>
+    </div>
 
-    container.insertAdjacentHTML("beforeend", html);
-    }
+    <label for="rekening_${rekeningNummer}">Rekeningnummer (IBAN).</label>
+    <input 
+        type="text" 
+        id="rekening_${rekeningNummer}" 
+        name="rekening_${rekeningNummer}"
+        pattern="NL[0-9]{2}[A-Z]{4}[0-9]{10}">
+
+    <label for="saldo_rekening_${rekeningNummer}">Saldo</label>
+    <input 
+        type="number" 
+        id="saldo_rekening_${rekeningNummer}" 
+        name="saldo_rekening_${rekeningNummer}"
+        min="0"
+        step="1" >
+    </fieldset>
+`;
+
+container.insertAdjacentHTML("beforeend", html);
+}
 
 function removeRekening() {
     if (container.lastElementChild) {
@@ -46,5 +57,11 @@ function removeRekening() {
     }
 }
 
-    plusButton.addEventListener("click", addRekening);
-    minButton.addEventListener("click", removeRekening);
+plusButton.addEventListener("click", addRekening);
+minButton.addEventListener("click", removeRekening);
+
+const today = new Date().toISOString().split("T")[0]; //zet maxdate in html naar vandaag
+
+document.querySelectorAll('input[type="date"]').forEach(input => {
+    input.max = today;
+});
